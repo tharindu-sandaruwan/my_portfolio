@@ -1,12 +1,24 @@
 import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
-import { Link } from 'react-scroll';
-import { FiArrowRight, FiDownload } from 'react-icons/fi';
-import portfoliophoto from '../Images/dp.jpeg'
+import { Link } from 'react-scroll'; // This is react-scroll's Link
+import { FiArrowRight, FiDownload, FiMail } from 'react-icons/fi';
+import { FaLinkedin, FaGithub, FaFacebook } from 'react-icons/fa';
+import portfoliophoto from '../Images/dp.jpeg';
 
 const Home = () => {
+  const socialLinks = {
+    linkedin: 'https://www.linkedin.com/in/your-linkedin-profile/',
+    github: 'https://github.com/your-github-username',
+    facebook: 'https://www.facebook.com/your-facebook-profile/',
+    email: 'mailto:your.email@example.com',
+  };
+
   return (
-    <section className="min-h-screen flex items-center bg-gradient-to-br from-white to-gray-100 dark:from-gray-900 dark:to-gray-800 pt-16">
+    // Add id="home" here
+    <section 
+      id="home" // <<< --- ADD THIS ID
+      className="min-h-screen flex items-center bg-gradient-to-br from-white to-gray-100 dark:from-gray-900 dark:to-gray-800 pt-16"
+    >
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -57,18 +69,68 @@ const Home = () => {
                Undergraduate Software Engineer at SLIIT specializing in
  Information Technology, with a passion for web and mobile development. Experienced in Agile methodologies, collaborative teamwork, and delivering innovative, efficient software solutions.
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9 }}
+              className="flex items-center space-x-5 pt-2"
+            >
+              <motion.a
+                href={socialLinks.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
+                whileHover={{ scale: 1.15, y: -2 }}
+                whileTap={{ scale: 0.9 }}
+                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              >
+                <FaLinkedin size={28} />
+              </motion.a>
+              <motion.a
+                href={socialLinks.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub Profile"
+                whileHover={{ scale: 1.15, y: -2 }}
+                whileTap={{ scale: 0.9 }}
+                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              >
+                <FaGithub size={28} />
+              </motion.a>
+              <motion.a
+                href={socialLinks.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook Profile"
+                whileHover={{ scale: 1.15, y: -2 }}
+                whileTap={{ scale: 0.9 }}
+                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              >
+                <FaFacebook size={28} />
+              </motion.a>
+              <motion.a
+                href={socialLinks.email}
+                aria-label="Send an Email"
+                whileHover={{ scale: 1.15, y: -2 }}
+                whileTap={{ scale: 0.9 }}
+                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              >
+                <FiMail size={28} />
+              </motion.a>
+            </motion.div>
             
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 }}
-              className="flex flex-wrap gap-4 pt-2"
+              className="flex flex-wrap gap-4 pt-4"
             >
-              <Link
-                to="projects"
+              <Link // This is react-scroll's Link
+                to="projects" // This 'projects' id must exist on your projects section
                 spy={true}
                 smooth={true}
-                offset={-70}
+                offset={-70} // Adjust if you have a fixed header
                 duration={700}
               >
                 <motion.button
