@@ -51,7 +51,7 @@ const Loader = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
       >
-        Welcome to My Portfolio
+        Welcome to Tharindu's Portfolio
       </motion.div>
       
       <div className="flex space-x-2">
