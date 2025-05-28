@@ -52,7 +52,7 @@ const skillsData = [
       { name: 'Testing (Jacoco,SonarQube)', level: 75 },
       // { name: 'CI/CD', level: 72 },
     ],
-    color: 'Tertiary ',
+    color: 'accent ',
   },
 ];
 
