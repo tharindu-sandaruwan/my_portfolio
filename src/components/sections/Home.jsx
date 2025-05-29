@@ -2,20 +2,21 @@ import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
 import { Link } from 'react-scroll'; // This is react-scroll's Link
 import { FiArrowRight, FiDownload, FiMail } from 'react-icons/fi';
-import { FaLinkedin, FaGithub, FaFacebook } from 'react-icons/fa';
+// Import FaInstagram here
+import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from 'react-icons/fa';
 import portfoliophoto from '../Images/dp.jpeg';
 
 const Home = () => {
   const socialLinks = {
-    linkedin: 'https://www.linkedin.com/in/your-linkedin-profile/',
-    github: 'https://github.com/your-github-username',
-    facebook: 'https://www.facebook.com/your-facebook-profile/',
-    email: 'mailto:your.email@example.com',
+    github: 'https://github.com/tharindu-sandaruwan',
+    linkedin: 'https://www.linkedin.com/in/tharindusandaruwan/',
+    facebook: 'https://www.facebook.com/tharindusandaruwan13',
+    instagram: 'https://www.instagram.com/tharindusandaruwan_/', 
   };
 
   return (
     // Add id="home" here
-    <section 
+    <section
       id="home" // <<< --- ADD THIS ID
       className="min-h-screen flex items-center bg-gradient-to-br from-white to-gray-100 dark:from-gray-900 dark:to-gray-800 pt-16"
     >
@@ -35,7 +36,7 @@ const Home = () => {
             >
               Hello, I'm
             </motion.p>
-            
+
             <motion.h1
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -44,7 +45,7 @@ const Home = () => {
             >
               <span className="block">Tharindu Sandaruwan</span>
             </motion.h1>
-            
+
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -59,7 +60,7 @@ const Home = () => {
                 }}
               />
             </motion.div>
-            
+
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -76,18 +77,7 @@ const Home = () => {
               transition={{ delay: 0.9 }}
               className="flex items-center space-x-5 pt-2"
             >
-              <motion.a
-                href={socialLinks.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn Profile"
-                whileHover={{ scale: 1.15, y: -2 }}
-                whileTap={{ scale: 0.9 }}
-                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-              >
-                <FaLinkedin size={28} />
-              </motion.a>
-              <motion.a
+                   <motion.a
                 href={socialLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -99,6 +89,18 @@ const Home = () => {
                 <FaGithub size={28} />
               </motion.a>
               <motion.a
+                href={socialLinks.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
+                whileHover={{ scale: 1.15, y: -2 }}
+                whileTap={{ scale: 0.9 }}
+                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              >
+                <FaLinkedin size={28} />
+              </motion.a>
+
+              <motion.a
                 href={socialLinks.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -109,8 +111,20 @@ const Home = () => {
               >
                 <FaFacebook size={28} />
               </motion.a>
+              {/* Add Instagram Icon Here */}
               <motion.a
-                href={socialLinks.email}
+                href={socialLinks.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram Profile"
+                whileHover={{ scale: 1.15, y: -2 }}
+                whileTap={{ scale: 0.9 }}
+                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+              >
+                <FaInstagram size={28} />
+              </motion.a>
+              <motion.a
+                href={`mailto:${socialLinks.email}`} // Use mailto: for email links
                 aria-label="Send an Email"
                 whileHover={{ scale: 1.15, y: -2 }}
                 whileTap={{ scale: 0.9 }}
@@ -119,7 +133,7 @@ const Home = () => {
                 <FiMail size={28} />
               </motion.a>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -142,9 +156,9 @@ const Home = () => {
                   <FiArrowRight className="ml-2" />
                 </motion.button>
               </Link>
-              
+
               <motion.a
-                href="/resume.pdf"
+                href="/resume.pdf" // Make sure resume.pdf is in your public folder
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
@@ -156,7 +170,7 @@ const Home = () => {
               </motion.a>
             </motion.div>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
